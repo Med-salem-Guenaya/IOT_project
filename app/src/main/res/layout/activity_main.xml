@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="580dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="148dp"
+        android:layout_marginBottom="3dp">
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/buttonFragment1"
+        android:layout_width="130dp"
+        android:layout_height="104dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:text="Temperature" />
+
+    <Button
+        android:id="@+id/buttonFragment2"
+        android:layout_width="130dp"
+        android:layout_height="104dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="139dp"
+        android:text="Proximity" />
+
+    <Button
+        android:id="@+id/buttonFragment3"
+        android:layout_width="130dp"
+        android:layout_height="104dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="2dp"
+        android:text="Gyroscope" />
+
+
+    <!-- This FrameLayout will hold your fragments -->
+
+
+</RelativeLayout>
