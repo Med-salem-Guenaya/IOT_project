@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/xRotationTextView"
+        android:id="@+id/xAccelerationTextView"
         android:layout_width="160dp"
         android:layout_height="78dp"
         android:layout_gravity="center"
-        android:text="X Rotation: N/A"
+        android:text="X Acceleration: N/A"
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/yRotationTextView"
+        android:id="@+id/yAccelerationTextView"
         android:layout_width="160dp"
         android:layout_height="78dp"
         android:layout_gravity="center"
-        android:text="Y Rotation: N/A"
+        android:text="Y Acceleration: N/A"
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/zRotationTextView"
+        android:id="@+id/zAccelerationTextView"
         android:layout_width="160dp"
         android:layout_height="78dp"
         android:layout_gravity="center"
-        android:text="Z Rotation: N/A"
+        android:text="Z Acceleration: N/A"
         android:textSize="24sp" />
 
 </LinearLayout>

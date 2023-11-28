@@ -2,12 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <!-- SENSORS -->
-    <uses-feature android:name="android.hardware.sensor.accelerometer" />
-    <uses-feature android:name="android.hardware.sensor.gyroscope" />
-    <uses-feature android:name="android.hardware.sensor.ambient_temperature" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false"/>
+    <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="false"/>
+    <uses-feature android:name="android.hardware.sensor.ambient_temperature" android:required="false"/>
+    <!-- i should add another temperature sensor that is compatible with my phone -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" android:required="false" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
     <!-- OUTPUT -->
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <!-- INTERNET access -->
     <uses-permission android:name="android.permission.INTERNET" />
 
 

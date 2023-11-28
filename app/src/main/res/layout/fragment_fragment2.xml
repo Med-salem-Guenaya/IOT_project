@@ -4,4 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/proximityTextView"
+        android:layout_width="234dp"
+        android:layout_height="154dp"
+        android:layout_gravity="center"
+        android:text="Proximity: N/A"
+        android:textColor="#8BC34A"
+        android:textSize="24sp" />
+
 </LinearLayout>

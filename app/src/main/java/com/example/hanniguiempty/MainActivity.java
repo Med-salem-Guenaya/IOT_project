@@ -18,11 +18,22 @@ public class MainActivity extends AppCompatActivity {
         Button buttonFragment1 = findViewById(R.id.buttonFragment1);
         Button buttonFragment2 = findViewById(R.id.buttonFragment2);
         Button buttonFragment3 = findViewById(R.id.buttonFragment3);
+        Button buttonFragment4 = findViewById(R.id.buttonFragment4);
+        Button buttonFragment5 = findViewById(R.id.buttonFragment5);
+        Button buttonFragment6 = findViewById(R.id.buttonFragment6);
+
+
 
         // Set click listeners for each button
         buttonFragment1.setOnClickListener(v -> openFragment(new Fragment1()));
         buttonFragment2.setOnClickListener(v -> openFragment(new Fragment2()));
         buttonFragment3.setOnClickListener(v -> openFragment(new Fragment3()));
+        buttonFragment4.setOnClickListener(v -> openFragment(new Fragment4()));
+        buttonFragment5.setOnClickListener(v -> openFragment(new Fragment5()));
+        buttonFragment6.setOnClickListener(v -> openFragment(new Fragment6()));
+
+
+
 
     }
 

@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
+    <!-- This FrameLayout will hold your fragments -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="580dp"
+        android:layout_height="504dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="224dp"
         android:layout_marginBottom="3dp">
 
     </FrameLayout>
@@ -41,8 +41,36 @@
         android:layout_marginEnd="2dp"
         android:text="Gyroscope" />
 
+    <Button
+        android:id="@+id/buttonFragment4"
+        android:layout_width="130dp"
+        android:layout_height="104dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="106dp"
+        android:text="Accelerometer" />
 
-    <!-- This FrameLayout will hold your fragments -->
+    <Button
+        android:id="@+id/buttonFragment5"
+        android:layout_width="130dp"
+        android:layout_height="104dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="277dp"
+        android:layout_marginTop="108dp"
+        android:text="Microphone" />
+
+    <Button
+        android:id="@+id/buttonFragment6"
+        android:layout_width="130dp"
+        android:layout_height="104dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="108dp"
+        android:text="Camera" />
+
 
 
 </RelativeLayout>
