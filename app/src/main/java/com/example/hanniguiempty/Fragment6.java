@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import java.util.Collections;
@@ -39,6 +40,9 @@ public class Fragment6 extends Fragment {
     private HandlerThread backgroundThread;
     private Handler backgroundHandler;
 
+    private static final int MY_PERMISSIONS_REQUEST_CAMERA = 1001;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fragment6, container, false);
@@ -54,6 +58,13 @@ public class Fragment6 extends Fragment {
     public void onResume() {
         super.onResume();
         startBackgroundThread();
+
+        //
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            // Request the camera permission
+            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.CAMERA}, MY_PERMISSIONS_REQUEST_CAMERA);
+        }
+        //
 
         if (surfaceView.isAttachedToWindow()) {
             openCamera();

@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.hanniguiempty.outputs.VibratorController;
+
 import java.util.Locale;
 
 public class Fragment2 extends Fragment implements SensorEventListener {
@@ -21,6 +23,8 @@ public class Fragment2 extends Fragment implements SensorEventListener {
     private SensorManager sensorManager;
     private Sensor proximitySensor;
 
+    //vvv
+    private VibratorController vibratorController;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fragment2, container, false);
@@ -38,6 +42,9 @@ public class Fragment2 extends Fragment implements SensorEventListener {
             Toast.makeText(requireContext(), "Proximity sensor not available", Toast.LENGTH_SHORT).show();
         }
 
+        //
+        vibratorController = new VibratorController(requireContext());
+
         return view;
     }
 
@@ -50,6 +57,12 @@ public class Fragment2 extends Fragment implements SensorEventListener {
             // For example, you might use a TextView to display it
             TextView proximityTextView = requireView().findViewById(R.id.proximityTextView);
             proximityTextView.setText(String.format(Locale.getDefault(), "Proximity: %.2f", proximityValue));
+            //
+            if (proximityValue < 5) {
+                // Vibrate if the temperature is above 60 degrees
+                vibratorController.vibrate(1000);
+            }
+
         }
     }
 

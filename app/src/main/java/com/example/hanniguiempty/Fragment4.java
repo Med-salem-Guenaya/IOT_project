@@ -14,12 +14,19 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.hanniguiempty.outputs.ColorFlasher;
+
 import java.util.Locale;
 
 public class Fragment4 extends Fragment implements SensorEventListener {
 
     private SensorManager sensorManager;
     private Sensor accelerometerSensor;
+
+    //
+    private ColorFlasher colorFlasher;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,6 +44,9 @@ public class Fragment4 extends Fragment implements SensorEventListener {
             // Handle case when sensor is not available
             Toast.makeText(requireContext(), "Accelerometer sensor not available", Toast.LENGTH_SHORT).show();
         }
+
+        //
+        colorFlasher = new ColorFlasher(view);
 
         return view;
     }
@@ -58,7 +68,14 @@ public class Fragment4 extends Fragment implements SensorEventListener {
 
             TextView zAccelerationTextView = requireView().findViewById(R.id.zAccelerationTextView);
             zAccelerationTextView.setText(String.format(Locale.getDefault(), "Z Acceleration: %.2f m/s²", zAcceleration));
+
+            //
+            if (xAcceleration > 3.0) {
+                colorFlasher.flashRedColor(500);
+            }
+
         }
+
     }
 
     @Override

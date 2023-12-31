@@ -14,12 +14,20 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.hanniguiempty.outputs.SoundPlayer;
+import com.example.hanniguiempty.outputs.VibratorController;
+
 import java.util.Locale;
 
 public class Fragment1 extends Fragment implements SensorEventListener {
 
     private SensorManager sensorManager;
     private Sensor ambientTemperatureSensor;
+
+    //
+    private SoundPlayer soundPlayer;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,6 +46,9 @@ public class Fragment1 extends Fragment implements SensorEventListener {
             Toast.makeText(requireContext(), "Ambient temperature sensor not available", Toast.LENGTH_SHORT).show();
         }
 
+        //
+        soundPlayer = new SoundPlayer(requireContext());
+
         return view;
     }
 
@@ -47,9 +58,19 @@ public class Fragment1 extends Fragment implements SensorEventListener {
             float temperatureValue = event.values[0];
 
             // Update UI with the temperature value
-            // For example, you might use a TextView to display it
             TextView temperatureTextView = requireView().findViewById(R.id.temperatureTextView);
             temperatureTextView.setText(String.format(Locale.getDefault(), "%.2f °C", temperatureValue));
+
+
+            //
+            if (temperatureValue > 60.0) {
+                // Play sound on loop
+                soundPlayer.playSound();
+            } else {
+                // Stop the sound when the temperature is not above 60 degrees
+                soundPlayer.stopSound();
+            }
+            //
         }
     }
     // vvv Had to add this to stop the compiler from giving errors

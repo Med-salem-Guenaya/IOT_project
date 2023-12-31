@@ -17,6 +17,8 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.hanniguiempty.outputs.FlashController;
+
 import java.util.Locale;
 
 public class Fragment5 extends Fragment {
@@ -30,6 +32,9 @@ public class Fragment5 extends Fragment {
 
     private TextView micLevelTextView;
     private Handler handler;
+
+    //
+    private FlashController flashController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +52,9 @@ public class Fragment5 extends Fragment {
             // Permission is already granted, initialize audio recorder
             initializeAudioRecorder();
         }
+
+        //
+        flashController = new FlashController(requireContext());
 
         return view;
     }
@@ -106,6 +114,12 @@ public class Fragment5 extends Fragment {
 
         // Update UI with microphone level
         micLevelTextView.setText(String.format(Locale.getDefault(), "Mic Level: %.2f dB", amplitudeDb));
+
+        //
+        if (amplitudeDb > 60.0) {
+            // Turn on flash for 2 seconds (adjust the duration as needed)
+            flashController.turnOnFlashForInterval(2000);
+        }
     }
 
     @Override
