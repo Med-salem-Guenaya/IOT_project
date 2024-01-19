@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Locale;
 
+
+//  GYROSCOPE
 public class Fragment3 extends Fragment implements SensorEventListener {
 
     private SensorManager sensorManager;

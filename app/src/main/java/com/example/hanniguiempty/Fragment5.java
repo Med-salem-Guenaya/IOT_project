@@ -21,6 +21,7 @@ import com.example.hanniguiempty.outputs.FlashController;
 
 import java.util.Locale;
 
+//  MICROPHONE
 public class Fragment5 extends Fragment {
 
     private static final int REQUEST_RECORD_AUDIO_PERMISSION = 200;

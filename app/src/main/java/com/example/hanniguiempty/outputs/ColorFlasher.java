@@ -1,23 +1,29 @@
 package com.example.hanniguiempty.outputs;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 
 public class ColorFlasher {
-
+    //
     private View targetView;
+
+    //  creates Handeler that runs the code in different thread that allows
     private Handler handler;
+
+    //
     private boolean isFlashing = false;
 
+    //
     public ColorFlasher(View targetView) {
         this.targetView = targetView;
         this.handler = new Handler(Looper.getMainLooper());
     }
 
-    public void flashRedColor(int durationMillis) {
+    //  function that has the color flashing logic
+    public void flashColor(int durationMillis) {
+        //
         if (!isFlashing) {
             isFlashing = true;
 
@@ -34,6 +40,7 @@ public class ColorFlasher {
         }
     }
 
+    //  function that Resets the screen/fragment portion color
     private void resetColor() {
         if (isFlashing) {
             // Reset color to the default state (you can customize this color)

@@ -18,6 +18,7 @@ import com.example.hanniguiempty.outputs.VibratorController;
 
 import java.util.Locale;
 
+//  PROXIMITY
 public class Fragment2 extends Fragment implements SensorEventListener {
 
     private SensorManager sensorManager;

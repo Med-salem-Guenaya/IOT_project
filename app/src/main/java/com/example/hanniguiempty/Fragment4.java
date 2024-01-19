@@ -18,12 +18,13 @@ import com.example.hanniguiempty.outputs.ColorFlasher;
 
 import java.util.Locale;
 
+//  ACCELEROMETER
 public class Fragment4 extends Fragment implements SensorEventListener {
 
     private SensorManager sensorManager;
     private Sensor accelerometerSensor;
 
-    //
+    //  Creates object form ColorFlasher class
     private ColorFlasher colorFlasher;
 
 
@@ -69,9 +70,9 @@ public class Fragment4 extends Fragment implements SensorEventListener {
             TextView zAccelerationTextView = requireView().findViewById(R.id.zAccelerationTextView);
             zAccelerationTextView.setText(String.format(Locale.getDefault(), "Z Acceleration: %.2f m/s²", zAcceleration));
 
-            //
+            // calls flashColor function from ColorFlasher class
             if (xAcceleration > 3.0) {
-                colorFlasher.flashRedColor(500);
+                colorFlasher.flashColor(500);
             }
 
         }

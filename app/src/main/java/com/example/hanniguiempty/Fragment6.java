@@ -25,6 +25,8 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Collections;
 
+
+//  CAMERA
 public class Fragment6 extends Fragment {
 
     private static final int REQUEST_CAMERA_PERMISSION = 201;

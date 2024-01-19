@@ -1,6 +1,7 @@
 package com.example.hanniguiempty;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -11,14 +12,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+//
+
 
 import androidx.fragment.app.Fragment;
 
+import com.example.hanniguiempty.connection.PubSubIntentService;
 import com.example.hanniguiempty.outputs.SoundPlayer;
 import com.example.hanniguiempty.outputs.VibratorController;
 
 import java.util.Locale;
 
+// TEMPERATURE
 public class Fragment1 extends Fragment implements SensorEventListener {
 
     private SensorManager sensorManager;
@@ -26,6 +31,9 @@ public class Fragment1 extends Fragment implements SensorEventListener {
 
     //
     private SoundPlayer soundPlayer;
+
+    //
+
 
 
 
@@ -49,6 +57,11 @@ public class Fragment1 extends Fragment implements SensorEventListener {
         //
         soundPlayer = new SoundPlayer(requireContext());
 
+
+        Intent intent = new Intent(getActivity(), PubSubIntentService.class);
+        getActivity().startService(intent);
+
+
         return view;
     }
 
@@ -65,7 +78,11 @@ public class Fragment1 extends Fragment implements SensorEventListener {
             //
             if (temperatureValue > 60.0) {
                 // Play sound on loop
-                soundPlayer.playSound();
+                //soundPlayer.playSound();
+
+                // call the mqtt sub & pub function and uses it
+
+
             } else {
                 // Stop the sound when the temperature is not above 60 degrees
                 soundPlayer.stopSound();
