@@ -93,6 +93,7 @@ public class Fragment5 extends Fragment {
     private void updateMicLevel() {
         new Thread(() -> {
             while (isRecording) {
+                // defining read size in a dynamic way
                 int readSize = audioRecord.read(audioData, 0, bufferSize / 2);
 
                 if (readSize > 0) {
@@ -100,7 +101,7 @@ public class Fragment5 extends Fragment {
                     for (int i = 0; i < readSize; i++) {
                         sum += audioData[i] * audioData[i];
                     }
-
+                    // getting amplitude
                     final double amplitude = Math.sqrt(sum / readSize);
                     handler.post(() -> updateMicLevelText(amplitude));
                 }
@@ -116,7 +117,7 @@ public class Fragment5 extends Fragment {
         micLevelTextView.setText(String.format(Locale.getDefault(), "Mic Level: %.2f dB", amplitudeDb));
 
         //
-        if (amplitudeDb > 60.0) {
+        if (amplitudeDb > 80.0) {
             // Turn on flash for 2 seconds (adjust the duration as needed)
             flashController.turnOnFlashForInterval(2000);
         }
