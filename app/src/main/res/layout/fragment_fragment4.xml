@@ -6,24 +6,24 @@
 
     <TextView
         android:id="@+id/xAccelerationTextView"
-        android:layout_width="160dp"
-        android:layout_height="78dp"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
         android:layout_gravity="center"
         android:text="X Acceleration: N/A"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/yAccelerationTextView"
-        android:layout_width="160dp"
-        android:layout_height="78dp"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
         android:layout_gravity="center"
         android:text="Y Acceleration: N/A"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/zAccelerationTextView"
-        android:layout_width="160dp"
-        android:layout_height="78dp"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
         android:layout_gravity="center"
         android:text="Z Acceleration: N/A"
         android:textSize="24sp" />

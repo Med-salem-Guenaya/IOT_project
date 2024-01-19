@@ -6,24 +6,24 @@
 
     <TextView
         android:id="@+id/xRotationTextView"
-        android:layout_width="160dp"
-        android:layout_height="78dp"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
         android:layout_gravity="center"
         android:text="X Rotation: N/A"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/yRotationTextView"
-        android:layout_width="160dp"
-        android:layout_height="78dp"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
         android:layout_gravity="center"
         android:text="Y Rotation: N/A"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/zRotationTextView"
-        android:layout_width="160dp"
-        android:layout_height="78dp"
+        android:layout_width="180dp"
+        android:layout_height="90dp"
         android:layout_gravity="center"
         android:text="Z Rotation: N/A"
         android:textSize="24sp" />
