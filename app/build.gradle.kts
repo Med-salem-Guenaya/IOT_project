@@ -70,7 +70,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     // AWs SDK
-    implementation("software.amazon.awssdk.iotdevicesdk:aws-iot-device-sdk:1.18.0")
+    api("software.amazon.awssdk.iotdevicesdk:aws-iot-device-sdk-android:1.18.0")
+    //implementation("software.amazon.awssdk.iotdevicesdk:aws-iot-device-sdk:1.18.0")
     //implementation("com.amazonaws:aws-android-sdk-iot:2.28.0")
     //api("software.amazon.awssdk.crt:aws-crt-android:0.29.0")
 

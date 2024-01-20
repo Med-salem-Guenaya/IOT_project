@@ -24,7 +24,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 
-public class PubSubIntentService  extends IntentService {
+public class PubSubIntentService {
 
     // When run normally, we want to exit nicely even if something goes wrong
     static String ciPropValue = System.getProperty("aws.crt.ci");
@@ -43,14 +43,8 @@ public class PubSubIntentService  extends IntentService {
 
     private String message = "27";
 
-    private static final String TAG = "PubSub";
 
-    public PubSubIntentService() {
-        super("PubSub");
-    }
-
-    @Override
-    protected void onHandleIntent(Intent intent) {
+    public void mqtt_funtion() {
         MqttClientConnectionEvents callbacks = new MqttClientConnectionEvents() {
             @Override
             public void onConnectionInterrupted(int errorCode) {

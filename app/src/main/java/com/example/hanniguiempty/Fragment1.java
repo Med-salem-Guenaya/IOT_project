@@ -22,6 +22,8 @@ import com.example.hanniguiempty.outputs.SoundPlayer;
 import com.example.hanniguiempty.outputs.VibratorController;
 
 import java.util.Locale;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 // TEMPERATURE
 public class Fragment1 extends Fragment implements SensorEventListener {
@@ -58,8 +60,13 @@ public class Fragment1 extends Fragment implements SensorEventListener {
         soundPlayer = new SoundPlayer(requireContext());
 
 
-        Intent intent = new Intent(getActivity(), PubSubIntentService.class);
-        getActivity().startService(intent);
+        Executor executor = Executors.newSingleThreadExecutor();
+        executor.execute(() -> {
+            PubSubIntentService pubsub = new PubSubIntentService();
+            pubsub.mqtt_funtion();
+        });
+
+
 
 
         return view;
